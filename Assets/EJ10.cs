@@ -11,6 +11,8 @@ public class EJ10 : MonoBehaviour
 
     public const int HoraApertura = 10;
     public const int HoraCierre = 18;
+    public const int HoraValidaMin = 0;
+    public const int HoraValidaMax = 24;
 
     public int HoraActual;
     public bool estaAbierto; 
@@ -18,7 +20,7 @@ public class EJ10 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(HoraActual < 0 || HoraActual > 24)
+        if(HoraActual < HoraValidaMin || HoraActual > HoraValidaMax)
         {
             Debug.Log("Ha ingresado una hora incorrecta");
         }else if (HoraActual >= HoraApertura && HoraActual < HoraCierre)
